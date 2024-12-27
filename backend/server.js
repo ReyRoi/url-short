@@ -16,7 +16,13 @@ const PORT = process.env.PORT || 4000
 connectDb();
 app.use(express.json())
 app.use(cookieParser());
-app.use(cors());
+const corsOptions = {
+  origin: 'https://url-short-frontend-1thd.onrender.com', // Allow specific origin
+  credentials: true, // Enable cookies or credentials
+};
+
+app.use(cors(corsOptions));
+
 app.use('/api/users',userRouter)
 app.use('/api/url',verifyToken,urlRouter)
 app.get('/:shortid',verifyToken,async(req,res)=>{
