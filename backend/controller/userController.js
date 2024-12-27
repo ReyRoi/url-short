@@ -48,7 +48,8 @@ const loginUser = asyncHandler(async(req,res)=>{
         },
         process.env.JWT_SECRET,
         {expiresIn : "1h"}
-    )
+    ) 
+        console.log(token)
         res.cookie('token',token)
         res.status(200).json({token})
     }else{
