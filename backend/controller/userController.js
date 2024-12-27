@@ -50,7 +50,11 @@ const loginUser = asyncHandler(async(req,res)=>{
         {expiresIn : "1h"}
     ) 
         console.log(token)
-        res.cookie('token',token)
+       res.cookie('token', token, {
+  httpOnly: true,
+  secure: true, // Required for cookies in cross-origin requests
+  sameSite: 'None', // Required for cross-origin cookies
+});
         res.status(200).json({token})
     }else{
         res.status(400).json({msg: "email and password not valid"})
