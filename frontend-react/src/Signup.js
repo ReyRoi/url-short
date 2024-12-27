@@ -14,7 +14,7 @@ const Signup = () => {
         console.log(userData)
 
         try{
-            const response = await axios.post('http://localhost:5000/api/users/signup',userData,{ withCredentials: true })
+            const response = await axios.post('https://url-short-backend-sz3y.onrender.com/api/users/signup',userData,{ withCredentials: true })
             console.log('Signup successful', response.data)
 
             alert('signup successful')

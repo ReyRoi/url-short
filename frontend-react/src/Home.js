@@ -12,7 +12,7 @@ const Home = () => {
         const userData = { url }
 
         try {
-            const response = await axios.post('http://localhost:5000/api/url', userData, {
+            const response = await axios.post('https://url-short-backend-sz3y.onrender.com/api/url', userData, {
                 withCredentials: true
             })
             console.log(response.data.shortid)
@@ -27,7 +27,7 @@ const Home = () => {
     const getAllAnalytics = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.get('http://localhost:5000/api/url/', {
+            const response = await axios.get('https://url-short-backend-sz3y.onrender.com/api/url/', {
                 withCredentials: true
             })
 
@@ -40,7 +40,7 @@ const Home = () => {
     }
     const handleLogout = async () => {
         try {
-          await axios.get('http://localhost:5000/api/users/logout', {}, { withCredentials: true });
+          await axios.get('https://url-short-backend-sz3y.onrender.com/api/users/logout', {}, { withCredentials: true });
           alert('Logged out successfully!');
           navigate('/login');
         } catch (error) {
@@ -56,7 +56,7 @@ const Home = () => {
                 <button type='submit'>generate</button><br /><br />
 
                 {shortUrl && (
-                    <h3>Short URL: {`http://localhost:5000/${shortUrl}`}</h3>
+                    <h3>Short URL: {`https://url-short-backend-sz3y.onrender.com/${shortUrl}`}</h3>
 
                 )}
 

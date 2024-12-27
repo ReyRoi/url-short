@@ -13,7 +13,7 @@ const Login = () => {
         console.log(userData)
 
         try{
-            const response = await axios.post('http://localhost:5000/api/users/login',userData,{ withCredentials: true })
+            const response = await axios.post('https://url-short-backend-sz3y.onrender.com/login',userData,{ withCredentials: true })
             console.log('Signup successful', response.data)
 
             alert('Login successful')
