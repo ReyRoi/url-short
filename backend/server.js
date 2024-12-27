@@ -17,7 +17,7 @@ connectDb();
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://url-short-mt5x.onrender.com', 
+    origin: 'https://url-short-frontend-1thd.onrender.com', 
     credentials: true,
 }));
 app.use('/api/users',userRouter)
