@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 4000
 connectDb();
 app.use(express.json())
 app.use(cookieParser());
-app.use(cors();
+app.use(cors());
 app.use('/api/users',userRouter)
 app.use('/api/url',verifyToken,urlRouter)
 app.get('/:shortid',verifyToken,async(req,res)=>{
